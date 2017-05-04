@@ -20,7 +20,46 @@
 <div class="reveal">
     <div class="slides">
         <!--positioning content-->
-        <section data-markdown="lecture/ui/slide01.md" class="center center-horizontal"></section>
+        <section class="center center-horizontal">
+            <h1>Android User Interface</h1>
+            <h3>Android</h3>
+            <h4>Клещев Денис</h4>
+        </section>
+        <section class="center center-horizontal">
+            <h2>UI Overview</h2>
+            <ul>
+                <li>Весь графический интерфейс строится из объектов классов View и ViewGroup</li>
+                <li>View - нечто, что может быть нарисованно на экране и с чем пользователь может взаимодействовать</li>
+                <li>ViewGroup - наследник View, содержит в себе другие View и определяет как они будут расположенны относительно друг друга</li>
+                <li>AdapterView - особый наследник ViewGroup, дочерние элементы которого задаются с помощью Adapter’a</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>UI Overview</h2>
+            <img src="http://i.stack.imgur.com/vYsMp.png">
+        </section>
+        <section class="center center-horizontal">
+            <h2>Declaring Views</h2>
+            <ul>
+                <li>Дерево View может быть создано прямо в коде</li>
+                <li>Более простой и предпочтительный способ - использовать XML</li>
+                <li>Это декларативно (говорим что делать, а не как)</li>
+                <li>Позволяет отделить графический интерфейс и логику</li>
+                <li>Меньше усилий и более читабельно</li>
+                <li>Переиспользуемо</li>
+                <li>Для разных конфигураций могут быть созданы разные XML файлы, при этом коду знать об этом не обязательно</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>Common Views</h2>
+            <ul>
+                <li class="fragment" data-fragment-index="1">TextView - нередактируемое текстовое поле</li>
+                <li class="fragment" data-fragment-index="2">EditText - редактируемое текстовое поле</li>
+                <li class="fragment" data-fragment-index="3">ImageView – картинка</li>
+                <li class="fragment" data-fragment-index="4">Button – кнопочка</li>
+                <li class="fragment" data-fragment-index="5">CheckBox - галочка</li>
+            </ul>
+        </section>
         <!--md file with several slides related to the section-->
         <section data-background-color="#699f00" class="center center-horizontal">
             <h1>Markdown: multiple slides in file</h1>
