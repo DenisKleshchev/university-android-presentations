@@ -60,6 +60,103 @@
                 <li class="fragment" data-fragment-index="5">CheckBox - галочка</li>
             </ul>
         </section>
+        <section class="center center-horizontal"
+                 data-markdown="lecture/ui/slide01.md"
+                 data-separator-vertical="^\r?\n------\r?\n$">
+        </section>
+        <section class="center center-horizontal">
+            <h2>Dimension Units</h2>
+            <ul>
+                <li>px - реальные пиксели на экране</li>
+                <li>pt - points, 1/72 дюйма</li>
+                <li>mm – миллиметры</li>
+                <li>in – дюймы</li>
+                <li>dp - density independent pixels. Количество пикселей одном dp зависит от плотности экрана</li>
+                <li>sp - scaled pixels. Аналогичны dp + размер зависит от выбранного размера шрифта пользователем</li>
+                <li>процентов нет</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>Dimension Units</h2>
+            <h4>Bad practice</h4>
+            <img src="http://developer.android.com/images/screens_support/density-test-bad.png">
+            <h4>Good practice</h4>
+            <img src="http://developer.android.com/images/screens_support/density-test-good.png">            
+        </section>
+        <section class="center center-horizontal"
+                 data-markdown="lecture/ui/slide02.md"
+                 data-separator-vertical="^\r?\n------\r?\n$"></section>
+        <section class="center center-horizontal">
+            <h2>Input Handling</h2>
+            <ul>
+                <li>View.setOnClickListener</li>
+                <li>View.setOnLongClickListener</li>
+                <li>View.setOnFocusChangeListener</li>
+                <li>View.setOnTouchListener</li>
+                <li>TextView.addTextChangedListener</li>
+                <li>CompoundButton.setOnCheckedChangeListener</li>
+                <li>AdapterView.setOnItemClickListener</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>Common Layouts</h2>
+            <ul>
+                <li>FrameLayout - рисует дочерние View поверх друг друга</li>
+                <li>LinearLayout - выстраивает свои элементы в одну линию</li>
+                <li>RelativeLayout - хитро располагает элементы относительно друг друга</li>
+                <li>ListView - список</li>
+                <li>GridLayout - дочерние View располагаются по сеточке</li>
+                <li>RecyclerView - современная замена ListView и GridLayout</li>
+                <li>ScrollView - добавляет скролл, если контент слишком большой</li>
+                <li>TableLayout - таблица для статичных данных</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Take a look</h2>
+            <pre><code data-noescape>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+&lt;ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:src="@drawable/android_logo"/&gt;
+
+&lt;LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal"&gt;
+    &lt;TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Hi there..."/&gt;
+
+    &lt;TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="... and here!"/&gt;
+&lt;/LinearLayout&gt;
+
+&lt;Button
+        android:id="@+id/rtn_proceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed"/&gt;
+&lt;/LinearLayout&gt;
+                    </code></pre>
+        </section>
+
         <!--md file with several slides related to the section-->
         <section data-background-color="#699f00" class="center center-horizontal">
             <h1>Markdown: multiple slides in file</h1>
