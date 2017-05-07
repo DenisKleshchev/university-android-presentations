@@ -60,9 +60,54 @@
                 <li class="fragment" data-fragment-index="5">CheckBox - галочка</li>
             </ul>
         </section>
-        <section class="center center-horizontal"
-                 data-markdown="lecture/ui/slide01.md"
-                 data-separator-vertical="^\r?\n------\r?\n$">
+        <section>
+            <section class="center">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>В xml поведение отдельного View можно настраивать с помощью аттрибутов</li>
+                    <li>Существует набор аттрибутов общих для всех View</li>
+                    <li>Почти каждый наследник View имеет свой собственный набор специфичных для него аттрибутов</li>
+                    <li>Можно создавать свои собственные аттрибуты</li>
+                    <li>Часто для каждого аттрибута существуют соответствующие ему методы</li>
+                </ul>
+            </section>
+            <section class="center">
+                <h2>Common Attributes</h2>
+                <ul>
+                    <li>android:id - уникальный идентификатор</li>
+                    <li>android:layout_width - ширина элемента</li>
+                    <li>android:layout_height - высота элемента</li>
+                    <li>android:layout_margin - отступы снаружи элемента</li>
+                    <li>android:padding - отступы внутри элемента</li>
+                    <li>android:layout_gravity - расположение элемента внутри родителя</li>
+                    <li>android:gravity - расположение контента внутри элемента</li>
+                    <li>android:visibility - показывать элемент или нет</li>
+                    <li>android:background - фоновое изображение</li>
+                    <li>...</li>
+                </ul>
+            </section>
+            <section class="center">
+                <h2>Unique Attributes</h2>
+                <h3>TextView</h3>
+                <ul>
+                    <li>android:text – текст</li>
+                    <li>android:textSize – размер</li>
+                    <li>android:textColor – цвет</li>
+                    <li>android:textStyle - стиль (bold, italic, monospace)</li>
+                    <li>android:singleLine - максимум одна строка текста</li>
+                    <li>android:maxLines - максимальное число строк текста</li>
+                    <li>android:ellipsize - что делать, если текст слишком длинный</li>
+                </ul>
+            </section>
+            <section class="center">
+                <h2>Unique Attributes</h2>
+                <h3>ImageView</h3>
+                <ul>
+                    <li>android:src - что показывать</li>
+                    <li>android:scaleType - как масштабировать</li>
+                    <li>android:adjustViewBounds - меняем размеры View в зависимости от размеров картинки</li>
+                </ul>
+            </section>
         </section>
         <section class="center center-horizontal">
             <h2>Dimension Units</h2>
@@ -83,9 +128,44 @@
             <h4>Good practice</h4>
             <img src="http://developer.android.com/images/screens_support/density-test-good.png">            
         </section>
-        <section class="center center-horizontal"
-                 data-markdown="lecture/ui/slide02.md"
-                 data-separator-vertical="^\r?\n------\r?\n$"></section>
+        <section>
+            <section class="center">
+                <h2>Drawable Types</h2>
+                <ul>
+                    <li>ColorDrawable - просто цвет</li>
+                    <li>BitmapDrawable - просто картинка</li>
+                    <li>NinePatchDrawable - картинка, которая умеет правильно растягиваться</li>
+                    <li>StateListDrawable - меняет свой контент в зависимости от состояния</li>
+                    <li>ShapeDrawable - набор свойств таких как: просто цвет, радиус скругления, градиент, обводка</li>
+                </ul>
+            </section>
+            <section class="center">
+                <h2>Drawable Types</h2>
+                <h3>drawable/view_selector.xml</h3>
+                <pre>
+                    <code class="small" data-trim>
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+                            <item android:drawable="@drawable/icon" android:state_enabled="true"></item>
+                            <item android:drawable="@drawable/icon_inactive" android:state_enabled="false"></item>
+                        </selector>
+                    </code>
+                </pre>
+            </section>
+            <section class="center">
+                <h2>Drawable Types</h2>
+                <h3>drawable/view_bg_shape.xml</h3>
+                <pre>
+                    <code class="small" data-trim>
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+                            <solid android:color="@color/blue"></solid>
+                            <corners android:radius="2dp"></corners>
+                        </shape>
+                    </code>
+                </pre>
+            </section>            
+        </section>
         <section class="center center-horizontal">
             <h2>Input Handling</h2>
             <ul>
@@ -113,48 +193,48 @@
         </section>
         <section>
             <h2>Take a look</h2>
-            <pre><code data-noescape>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"&gt;
-&lt;ImageView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:adjustViewBounds="true"
-    android:src="@drawable/android_logo"/&gt;
-
-&lt;LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="15dp"
-    android:layout_marginBottom="10dp"
-    android:orientation="horizontal"&gt;
-    &lt;TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="Hi there..."/&gt;
-
-    &lt;TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:text="... and here!"/&gt;
-&lt;/LinearLayout&gt;
-
-&lt;Button
-        android:id="@+id/rtn_proceed"
+            <pre><code class="tiny" data-trim>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Proceed"/&gt;
-&lt;/LinearLayout&gt;
-                    </code></pre>
+        android:adjustViewBounds="true"
+        android:src="@drawable/android_logo"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="Hi there..."/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="... and here!"/>
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/rtn_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Proceed"/>
+</LinearLayout>
+            </code></pre>
         </section>
 
         <!--md file with several slides related to the section-->
@@ -352,3 +432,7 @@
 <script src="js/printpdf.js"></script>
 </body>
 </html>
+
+Reveal.initialize({
+    center: true
+})
