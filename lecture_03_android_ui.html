@@ -191,50 +191,38 @@
                 <li>TableLayout - таблица для статичных данных</li>
             </ul>
         </section>
-        <section>
-            <h2>Take a look</h2>
-            <pre><code class="tiny" data-trim>
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/android_logo"/>
+        <section class="center center-horizontal">
+            <h1>Интерактивчик!</h1>
+        </section>
+        <section class="center center-horizontal">
+            <h2>ListView, GridView</h2>
+            <ul>
+                <li>Отображение вертикального (ListView) или в виде таблицы (GridView) списка однотипных данных</li>
+                <li>Переиспользует созданные вьюхи</li>
+                <li>Можно добавлять хедеры и футеры</li>
+                <li>Необходимо использовать класс Adapter</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>RecyclerView</h2>
+            <ul>
+                <li>Ничего не знает о расположении элементов</li>
+                <li>Обязательное использование <b>ViewHolder</b></li>
+                <li>Сам решает, когда, как и что кэшировать и переиспользовать</li>
+                <li>Decoration Позволяет добавить любое "украшение" к любому элементу</li>
+                <li>Можно сделать любое расположение элементов, но это сложнее</li>
+                <li>Click handling - чуть сложнее чем в ListView и GtidView</li>
+            </ul>
+        </section>
+        <section class="center center-horizontal">
+            <h2>RecyclerView.Adapter</h2>
+            
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:text="Hi there..."/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:text="... and here!"/>
-    </LinearLayout>
-
-    <Button
-            android:id="@+id/rtn_proceed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Proceed"/>
-</LinearLayout>
-            </code></pre>
+        </section>
+        <section data-markdown="lecture/ui/xml_example.md"></section>
+        <section class="center center-horizontal">
+            <h2>CardView</h2>
+            <img src="lecture/ui/card_view.png">
         </section>
 
         <!--md file with several slides related to the section-->
