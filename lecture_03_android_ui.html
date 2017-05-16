@@ -224,190 +224,98 @@
             <h2>CardView</h2>
             <img src="lecture/ui/card_view.png">
         </section>
-
-        <!--md file with several slides related to the section-->
-        <section data-background-color="#699f00" class="center center-horizontal">
-            <h1>Markdown: multiple slides in file</h1>
+        <section class="center center-horizontal">
+            <h2>Custom View</h2>
+            <ul>
+                <li>Позволяет задавать свои аттрибуты</li>
+                <li>Расширение существующей View (например TextView)</li>
+                <li>Не занимается ничем, кроме отображения данных и взаимодействия с юзером</li>
+                <li>Не выполняет лишнюю работу по отрисовке</li>
+                <li>Корректно отрисовывается в превью студии</li>
+                <li>Действительно необходима и ее функционал не может быть реализован стандартными средствами</li>
+            </ul>
         </section>
-        <section data-markdown="lecture/example/slide02__section__about.md"></section>
-        <section data-markdown="lecture/example/slide03__section__with-horizontal-slides.md"
-                 data-separator-vertical="^\r?\n------\r?\n$"></section>
-        <!--example of code highlighting-->
-        <section data-background-color="#699f00" class="center center-horizontal">
-            <h1>Markdown: code examples</h1>
-        </section>
-        <section data-markdown="lecture/example/slide04__code-example.md"
-                 data-separator-vertical="^\r?\n------\r?\n$"></section>
-        <!--html markup-->
-        <section data-background-color="#699f00" class="center center-horizontal">
-            <h1>HTML: iframes</h1>
-        </section>
-        <section>
-            <h2>IFrame example</h2>
-            <P>Полезно для всяких ссылочек на либы, например
-            <div>
-
-                <iframe class="fragment" data-fragment-index="1"
-                        width="400" height="600"
-                        src="https://reactivex.io/"></iframe>
-                <iframe class="fragment" data-fragment-index="2"
-                        width="400" height="600"
-                        src="https://jakewharton.github.io/butterknife/"></iframe>
-                <iframe class="fragment" data-fragment-index="3"
-                        width="400" height="600"
-                        src="https://google.github.io/dagger/android.html"></iframe>
-                <iframe class="fragment" data-fragment-index="4"
-                        width="400" height="600"
-                        src="https://square.github.io/okhttp/"></iframe>
-            </div>
-            <div class="fragment" data-fragment-index="5">
-                <p>*src="https", если грузить http - оно не откроется на GitHub Pages</p>
-            </div>
-        </section>
-        <section data-background-color="#699f00" class="center center-horizontal">
-            <h1>HTML: split screen</h1>
-        </section>
-        <section>
-            <h2>Позиционирование контента</h2>
-            <div class="half-left">
-                <h4>Левая колонка</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt laoreet bibendum. Fusce
-                    eleifend viverra enim, sed aliquet odio faucibus quis. Fusce vulputate pharetra nisl nec porttitor.
-                    Nam consectetur tincidunt dignissim. Morbi ut leo risus. Pellentesque ac nisi nec elit efficitur
-                    consequat sed nec massa. Fusce vel luctus ante, et ultrices sapien. Pellentesque sed ornare orci.
-                    Fusce a quam at mi bibendum finibus.</p>
-            </div>
-            <div class="half-right">
-                <h4>Правая колонка</h4>
-                <p>Vivamus tempor ligula leo, at porta sem euismod vitae. Etiam pharetra turpis vitae lectus rutrum,
-                    placerat elementum nibh efficitur. Morbi in felis vehicula dolor consequat tempor. Donec eget ante
-                    hendrerit, tincidunt tortor sit amet, eleifend lorem. Donec accumsan tempus erat. Etiam gravida,
-                    odio in dictum pulvinar, ex felis aliquam neque, vitae congue dui turpis quis mi. Vestibulum sit
-                    amet nunc et massa iaculis sollicitudin vitae non lacus. Mauris dapibus elit nulla, ut vehicula
-                    tellus dapibus nec. Proin egestas pretium nisl a bibendum.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Позиционирование контента</h2>
-            <div class="third-left">
-                <h2>Left</h2>
-                <img class="fragment" data-fragment-index="1"
-                     src="https://www.w3schools.com/css/trolltunga.jpg">
-            </div>
-            <div class="third-center">
-                <h2>Center</h2>
-                <div class="center-horizontal">
-                    <p class="fragment" data-fragment-index="2">just text</p>
-                    <ul class="fragment" data-fragment-index="2">
-                        <li>unordered 1</li>
-                        <li>unordered 2</li>
-                        <li>unordered 3</li>
+        <section class="center center-horizontal">
+            <h2>Custom View: аттрибуты</h2>
+            <p>Описание атрибутов в res/values/attrs.xml</p>
+            <ul>
+                <li>declare-styleable 
+                    <ul>
+                        <li>name - имя класса</li>
                     </ul>
-                    <p class="fragment" data-fragment-index="3">more text</p>
-                    <ol class="fragment" data-fragment-index="3">
-                        <li>ordered 1</li>
-                        <li>ordered 2</li>
-                        <li>ordered 3</li>
-                    </ol>
-                </div>
-            </div>
-            <div class="third-right">
-                <h2>Right</h2>
-                <img class="fragment" data-fragment-index="4"
-                     src="https://www.w3schools.com/css/trolltunga.jpg">
-            </div>
+                </li>
+                <li>attr
+                    <ul>
+                        <li>name - имя атрибута, который будет использоваться в разметке</li>
+                        <li>format - тип атрибута
+                            <ul>
+                                <li>integer</li>
+                                <li>float</li>
+                                <li>string</li>
+                                <li>color</li>
+                                <li>dimension</li>
+                                <li>reference</li>
+                                <li>...</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
-        <section data-background-color="#699f00" class="center center-horizontal">
-            <h1>HTML: fragmentation</h1>
+        <section data-markdown="lecture/ui/custom_view_attributes.md"></section>
+        <section class="center center-horizontal">
+            <h2>Custom Views: Наследование</h2>
+            <ol type="1">
+                <li>Получить атрибуты в конструкторе
+                    <pre><code class="normal" data-trim data-noescape>
+                        TypedArray a = 
+                            context.obtainStyledAttributes(attrs, 
+                                        R.styleable.CustomImageView);
+                    </code></pre>
+                </li>
+                <li>Получить нужные значения
+                    <pre><code class="normal" data-trim data-noescape>
+                        Drawable foregroundDrawable = 
+                            a.getDrawable(R.styleable.CustomImageView_param);
+
+                        float margin = 
+                            a.getDimension(R.styleable.CustomImageView_param, 0);
+                    </code></pre>
+                </li>
+                <li>Не забыть освободить ресуры обратно
+                    <pre><code class="big" data-trim data-noescape>
+                        a.recycle();
+                    </code></pre>
+                </li>
+            </ol>
         </section>
-        <section>
-            <h2>Code fragmenting</h2>
-            <pre><code data-trim data-noescape>
-						public interface NewsService {
-							//do your requests, use Observables.
-
-							<span class="fragment highlight-red" data-fragment-index="1">@GET("news/getAll")
-							Observable&lt;List&lt;News>> getAll();</span>
-
-							@GET("news/getById")
-							<span class="fragment highlight-green" data-fragment-index="2">Observable&lt;NewsDetails> getNewsById(@Query("id") String newsId);</span>
-						}
-					</code></pre>
+        <section class="center center-horizontal">
+            <h2>Custom Views: Наследование</h2>
+            <ul>
+                <li>onDraw</li>
+                <li>onTouchEvent</li>
+                <li>onMeasure</li>
+                <li>onSizeChanged</li>
+                <li>...</li>
+            </ul>
         </section>
-        <section>
-            <div class="fragment fade-out overlap-fragment" data-fragment-index="1">
-                <h3>&lt;pre>&lt;code class="tiny"></h3>
-                <pre><code class="tiny" data-trim data-noescape>
-                    @NonNull
-                    private static OkHttpClient.Builder getDefaultOkHttpBuilder() {
-                        return new OkHttpClient.Builder()
-                                .addInterceptor(getHttpLoggingInterceptor());
-                    }
-
-                    @NonNull
-                    private static HttpLoggingInterceptor getHttpLoggingInterceptor() {
-                        final HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-                        <mark>httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);</mark>
-                        return httpLoggingInterceptor;
-                    }
-                </code></pre>
-            </div>
-            <div class="fragment current-visible fade-up fade-out overlap-fragment" data-fragment-index="1">
-                <h3>&lt;pre>&lt;code class="small"></h3>
-                <pre><code class="small" data-trim data-noescape>
-                    @NonNull
-                    private static OkHttpClient.Builder getDefaultOkHttpBuilder() {
-                        return new OkHttpClient.Builder()
-                                .addInterceptor(getHttpLoggingInterceptor());
-                    }
-
-                    @NonNull
-                    private static HttpLoggingInterceptor getHttpLoggingInterceptor() {
-                        final HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-                        <mark>httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);</mark>
-                        return httpLoggingInterceptor;
-                    }
-                </code></pre>
-            </div>
-            <div class="fragment current-visible fade-up fade-out overlap-fragment" data-fragment-index="2">
-                <h3>&lt;pre>&lt;code></h3>
-                <pre><code data-trim data-noescape>
-                    @NonNull
-                    private static OkHttpClient.Builder getDefaultOkHttpBuilder() {
-                        return new OkHttpClient.Builder()
-                                .addInterceptor(getHttpLoggingInterceptor());
-                    }
-
-                    @NonNull
-                    private static HttpLoggingInterceptor getHttpLoggingInterceptor() {
-                        final HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-                        <mark>httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);</mark>
-                        return httpLoggingInterceptor;
-                    }
-                </code></pre>
-            </div>
-            <div class="fragment fade-up overlap-fragment" data-fragment-index="3">
-                <h3>&lt;pre>&lt;code class="large"></h3>
-                <pre><code class="large" data-trim data-noescape>
-                    @NonNull
-                    private static OkHttpClient.Builder getDefaultOkHttpBuilder() {
-                        return new OkHttpClient.Builder()
-                                .addInterceptor(getHttpLoggingInterceptor());
-                    }
-
-                    @NonNull
-                    private static HttpLoggingInterceptor getHttpLoggingInterceptor() {
-                        final HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-                        <mark>httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);</mark>
-                        return httpLoggingInterceptor;
-                    }
-                </code></pre>
-            </div>
+        <section data-markdown="lecture/ui/custom_view_usage.md"></section>
+        <section class="center center-horizontal">
+            <h1>Интерактивчик!</h1>
         </section>
         <section>
-            <h2>Домашнее задание</h2>
-            <p>А теперь делаем свои лекции и публикуем их в этом же репозитории</p>
-            <p><a href="index.html">Back to contents</a></p>
+            <h2>Дополнительные ссылки</h2>
+            <ul>
+                <li><p><a href="http://developer.android.com/guide/topics/ui/index.html">User Interface</a></p></li>
+                <li><p><a href="http://developer.android.com/training/best-ui.html">Best Practices for User Interface</a></p></li>
+                <li><p><a href="http://developer.android.com/training/improving-layouts/index.html">Improving Layout Performance</a></p></li>
+                <li><p><a href="http://developer.android.com/training/custom-views/index.html">Creating Custom Views</a></p></li>
+                <li><p><a href="http://developer.android.com/reference/android/view/View.html">View</a></p></li>
+                <li><p><a href="http://developer.android.com/guide/topics/ui/custom-components.html">Custom Components</a></p></li>
+                <li><p><a href="http://developer.android.com/guide/topics/resources/drawable-resource.html">Drawable Resources</a></p></li>
+                <li><p><a href="http://developer.android.com/training/improving-layouts/optimizing-layout.html">Optimizing Layout Hierarchies</a></p></li>
+                <li><p><a href="https://developer.android.com/training/material/lists-cards.html">Creating Lists and Cards</a></p></li>
+            </ul>
         </section>
     </div>
 </div>
